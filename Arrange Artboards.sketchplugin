@@ -1,0 +1,23 @@
+// Arrange Artboards Plugin
+/*
+  Author: Ken Moore
+  Date: 31 January 2015
+  Version: 0.1
+
+  Layout all artboards (of the current page) in a horizontal line with 100px between each.
+*/
+
+var page = [doc currentPage];
+var artboards = [page artboards];
+var x = 0;
+
+for (var i = 0; i < [artboards count]; i++) {
+  var artboard = [artboards objectAtIndex: i];
+
+  var frame = [artboard frame];
+  frame.x = x;
+  frame.y = 0;
+
+  x += [frame width] + 100;
+}
+
