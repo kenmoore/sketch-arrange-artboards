@@ -1,7 +1,7 @@
 # Arrange Artboard plugin for Sketch
 
 Managing artboards can get messy, especially when you insert artboards in the middle of a sequence.
-The Arrange Artboard plugin lays out all your artboards in a horizontal line with 100px between each.
+The Arrange Artboard plugin lays out all your artboards in a single row with 100px between each.
 
 Works great in conjuction with these plugins:
  - [Numberize](https://github.com/bomberstudios/sketch-commands/tree/master/Numberize)
