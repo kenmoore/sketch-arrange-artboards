@@ -2,22 +2,41 @@
 /*
   Author: Ken Moore
   Date: 31 January 2015
-  Version: 0.1
+  Version: 0.2
 
-  Layout all artboards (of the current page) in a horizontal line with 100px between each.
+  Layout all artboards neatly in a grid with user-specified number of rows.
 */
 
 var page = [doc currentPage];
 var artboards = [page artboards];
+var count = [artboards count];
 var x = 0;
+var y = 0;
 
-for (var i = 0; i < [artboards count]; i++) {
+// Prompt user for number of rows
+var rows = [doc askForUserInput:"How many rows?" initialValue: 1];
+var numPerRow = Math.floor(count / rows);
+var maxHeight = 0;
+
+for (var i = 0; i < count; i++) {
   var artboard = [artboards objectAtIndex: i];
-
   var frame = [artboard frame];
-  frame.x = x;
-  frame.y = 0;
 
-  x += [frame width] + 100;
+  frame.x = x;
+  frame.y = y;
+
+  // Keep track of the tallest artboard in this row
+  if ([frame height] > maxHeight) {
+    maxHeight = [frame height];
+  }
+
+  if ((i + 1) % numPerRow == 0) {
+    // If last artboard in this row, reset x and calculate the y position of the next row
+    x = 0;
+    y += maxHeight + 200;
+    maxHeight = 0;
+  } else {
+    x += [frame width] + 100;
+  }
 }
 
