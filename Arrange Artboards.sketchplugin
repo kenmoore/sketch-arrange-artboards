@@ -15,7 +15,7 @@ var y = 0;
 
 // Prompt user for number of rows
 var rows = [doc askForUserInput:"How many rows?" initialValue: 1];
-var numPerRow = Math.floor(count / rows);
+var numPerRow = Math.ceil(count / rows);
 var maxHeight = 0;
 
 for (var i = 0; i < count; i++) {
