@@ -1,0 +1,21 @@
+{
+    "name" : "Arrange Artboards",
+    "description" : "Layout all artboards neatly in a grid with user-specified number of rows",
+    "author" : "Ken Moore",
+    "authorEmail" : "kenmoore@gmail.com",
+    "version" : "1.0",
+    "identifier" : "com.kenmoore.sketch.arrangeartboards",
+
+    "commands" : [
+    {
+      "script" : "Arrange Artboards.js",
+      "name" : "Arrange Artboards",
+      "handler" : "arrangeArtboards",
+      "identifier" : "arrangeartboards"
+    }
+  ],
+   "menu" : {
+    "isRoot" : true,
+    "items": [ "arrangeartboards" ]
+   }
+}
