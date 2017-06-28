@@ -5,9 +5,7 @@
 */
 
 var arrangeArtboards = function(context) {
-  // set doc and selection to work around the Sketch 3.4 - 3.4.2 bug 
-  // where plugins often target a non-foreground document 
-  var doc = NSDocumentController.sharedDocumentController().currentDocument() || NSDocumentController.sharedDocumentController().documents().firstObject()
+  var doc = context.document;
 
   var page = [doc currentPage];
   var artboards = [page artboards];
